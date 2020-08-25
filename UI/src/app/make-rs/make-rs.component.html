@@ -1,0 +1,50 @@
+<br><br>
+<div class="w3-modal" id = "modal_confirm_reservation">
+	<div class="w3-modal-content w3-center w3-padding-large">
+		<h2 class="">Your reservation has been made</h2> 
+		<div class="w3-content" style="max-width: 400px">
+			<table class="w3-table">
+				<tr><th>Name: </th><td>{{reservation.value.name}}</td></tr>
+				<tr><th>Phone: </th><td>{{reservation.value.phone}}</td></tr>
+				<tr><th>Date time: </th><td>On {{reservation.value.date}} at {{reservation.value.time}}</td></tr>
+			</table>
+		</div>
+		<p>Thank you and see you soon at our restaurant!</p>
+		<div class="w3-clear"></div>
+		<div class="w3-btn w3-red w3-padding" (click)="closeModal()">Close</div>
+	</div>
+</div>
+
+<div class="w3-container w3-content" >
+	<h2 class="w3-center w3-wide">Fancy for a meal? <br>Make reservation now!</h2>
+	<div class="w3-center"><i>Bring you the best food in town</i></div>
+	<br><br><br><br>
+	<form [formGroup]="reservation" (ngSubmit)="handleReservation()">
+		<div class="w3-row-padding">
+			<div class="w3-col l6">
+				<label><b>Your name</b></label>
+				<input class="w3-input" formControlName = "name" >
+				<label><b>Your phone number</b></label>
+				<input class="w3-input" formControlName = "phone">
+			</div>
+			<div class="w3-col l6">
+				
+				<div class="w3-row-padding w3-stretch">
+					<div class="w3-col s6">
+						<label><b>Date</b></label>
+						<input class="w3-input" type="date" formControlName = "date" min="{{date | date:'yyyy-MM-dd'}}">
+					</div>
+					<div class="w3-col s6">
+						<label><b>Time</b></label>
+						<select class="w3-select" formControlName = "time">
+							<option disabled>Time</option>
+							<option *ngFor="let time of times" value={{time}}>{{time}}</option>
+						</select>
+					</div>
+				</div>
+				<br>
+				<input class="w3-btn w3-black w3-right" type="submit" value="Reverse me!" [disabled]="!reservation.valid">
+			</div>
+		</div>
+	</form>
+</div>

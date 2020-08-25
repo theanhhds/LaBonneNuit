@@ -1,0 +1,65 @@
+<div class="" id="#">
+	<div class="mid-image w3-container">
+		<div class="w3-center">
+			<div class="w3-center layout">
+				<span class="w3-padding-large w3-xxlarge w3-wide">We only serve you the best food</span>
+				<div class="w3-text-white w3-large w3-center"><i>and only the best</i></div>
+			</div>
+			<br><br><br>
+		</div>
+	</div>
+	
+	<div class="w3-container w3-content">
+		<br>
+		<h1 class="w3-center w3-wide">Please have a look at our menu</h1>
+		<div class="w3-center"><i class="">We make sure that you defenitely will enjoy it!</i></div>
+		<br><br><br>
+		<h2 class="w3-center w3-wide">The Appetizer</h2>
+		<br><br>
+		<div class="w3-content  w3-row-padding">
+			<div *ngFor="let dish of menu_list">
+				<div *ngIf="dish.type==1">
+					<div class="w3-col m6 w3-padding">
+						<div class="w3-card w3-padding">
+							<div class="w3-center w3-large"><b>{{dish.name}}</b></div>
+							<div class="w3-center w3-large">€{{dish.price}}</div>
+							<div class="w3-text-grey w3-center"><i>{{dish.description}}</i></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br><br>
+		<h2 class="w3-center w3-wide">The Main Dish</h2>
+		<br><br>
+		<div class="w3-content w3-row-padding">
+			<div *ngFor="let dish of menu_list">
+				<div *ngIf="dish.type==2">
+					<div class="w3-col m6 w3-padding">
+						<div class="w3-card w3-padding">
+							<div class="w3-center w3-large"><b>{{dish.name}}</b></div>
+							<div class="w3-center w3-large">€{{dish.price}}</div>
+							<div class="w3-text-grey w3-center"><i>{{dish.description}}</i></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br><br>
+		<h2 class="w3-center w3-wide">The Dessert</h2>
+		<br><br>
+		<div class="w3-content">
+			<div *ngFor="let dish of menu_list">
+				<div *ngIf="dish.type==3">
+					<div class="w3-col m6 w3-padding">
+						<div class="w3-card w3-padding">
+							<div class="w3-center w3-large"><b>{{dish.name}}</b></div>
+							<div class="w3-center w3-large">€{{dish.price}}</div>
+							<div class="w3-text-grey w3-center"><i>{{dish.description}}</i></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

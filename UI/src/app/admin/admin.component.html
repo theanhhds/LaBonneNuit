@@ -1,0 +1,22 @@
+<br>
+<div class="mid-image w3-container">
+	<div class="w3-center">
+		<div class="w3-center layout">
+			<span class="w3-padding-large w3-xxlarge w3-wide">Managing your restaurent here</span>
+			<div class="w3-text-white w3-large"><i>Be positive, be a boss!</i></div>
+		</div>
+		<br><br><br>
+		<button class="w3-btn w3-xlarge w3-text-white w3-border w3-border-white w3-padding-large menu-btn"
+			(click)="openAddMenu()">Add menu</button>
+		<br><br><br>
+	</div>
+</div>
+<div class="w3-container">
+	<div class="w3-modal" id="add_menu">
+		<div class="w3-modal-content">
+			<app-add-menu (closeModal)="closeAddMenu()"></app-add-menu>
+		</div>
+	</div>
+	<br><br>
+	<app-check-reservation></app-check-reservation>
+</div>

@@ -1,0 +1,25 @@
+{
+  "name": "labonnenuit",
+  "version": "1.0.0",
+  "description": "labonnenuit server",
+  "main": "server.js",
+  "engines": {
+    "node": "10.x"
+  },
+  "dependencies": {
+    "body-parser": "*",
+    "cors": "*",
+    "express": "*",
+    "mongodb": "*"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "TheAnh",
+  "license": "ISC",
+  "devDependencies": {},
+  "keywords": [
+    "restaurent"
+  ]
+}

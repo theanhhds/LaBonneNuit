@@ -1,0 +1,32 @@
+<div class="w3-container w3-display-container">
+	<h1 class="w3-center">Add new menu</h1>
+	<div class="w3-btn w3-display-topright w3-text-red" (click)="closeMenuModal()">&times;</div>
+	<form [formGroup] = "add_menu_form" (ngSubmit)="handleAddMenu()" >
+		<div class="w3-row-padding">
+			<div class="w3-col l6">
+				<label><b>Name</b></label>
+				<input type="text" class="w3-input" formControlName = "name">
+				<label><b>Description</b></label>
+				<input type="text" class="w3-input" formControlName = "description">
+			</div>
+			<div class="w3-col l6">
+				<label><b>Type of dish</b></label>
+				<select class="w3-select" formControlName = "type">
+					<option value="0" [disabled]="true">Choose dish type</option>
+					<option value="1">Appetizer dish</option>
+					<option value="2">Main dish</option>
+					<option value="3">Dessert</option>
+				</select>
+				<label><b>Price (in EUR)</b></label>
+				<input type="number" step="0.01" class="w3-input" formControlName = "price">
+			</div>
+		</div>
+		
+		
+		<div class="w3-right">
+			<input type = "submit" class="w3-btn w3-black w3-margin" value="Create!" [disabled] = "!add_menu_form.valid">
+		</div>
+		
+		<div class="w3-text-green">{{message}}</div>
+	</form>
+</div>
